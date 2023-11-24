@@ -17,7 +17,9 @@ def temperature_forecast(request):
     abstract_api_key = os.environ.get("ABSTRACT_API_KEY")
     api_url = "https://ipgeolocation.abstractapi.com/v1/?api_key=" + abstract_api_key
 
-    # Temporarily use a hard-coded IP address until the website's live. The code doesn't work locally
+    # Use hard-coded IP address for local use
+    if ip == "127.0.0.1":
+        ip = "23.82.186.28"
     response = requests.get(api_url + "&ip_address=" + ip).json()
 
     latitude = response["latitude"]
