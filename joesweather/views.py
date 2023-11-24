@@ -3,17 +3,6 @@ import requests
 import os
 
 
-# def get(request):
-#     # Create a GeoIP instance
-#     g = GeoIP2()
-
-#     # Get the client's IP address from the request's META data
-#     client_ip = request.META['REMOTE_ADDR']
-
-#     # Use GeoIP to get the latitude and longitude based on the client's IP address
-#     lat, long = g.lat_lon(client_ip)
-
-
 def temperature_forecast(request):
     # Get the user's IP Address
     x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
