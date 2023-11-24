@@ -36,8 +36,8 @@ def temperature_forecast(request):
     tempArray.sort()
 
     # Extract the lowest and highest
-    lowestTemp = tempArray[0]
-    highestTemp = tempArray[-1]
+    lowestTemp = round(tempArray[0])
+    highestTemp = round(tempArray[-1])
 
     # Pass the temperature data to the template
     return render(
